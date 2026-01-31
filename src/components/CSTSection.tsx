@@ -23,7 +23,7 @@ const CSTSection = () => {
   return (
     <section id="cst" className="relative overflow-hidden">
       {/* Video Background with Overlay */}
-      <div className="relative min-h-[500px] md:min-h-[600px] flex items-center">
+      <div className="relative min-h-[550px] md:min-h-[600px] flex items-center">
         {/* Video */}
         <video
           autoPlay
@@ -53,23 +53,23 @@ const CSTSection = () => {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white/85 mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
-              Seja capacitado no primeiro tratamento não medicamentoso para demência{" "}
-              <strong className="text-white">validado no Brasil</strong> e presente em{" "}
+            <p className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl mx-auto text-balance leading-relaxed">
+              <strong className="text-white">O primeiro tratamento não medicamentoso para demência</strong>{" "}
+              validado no Brasil e presente em{" "}
               <strong className="text-amber">39 países</strong>.
             </p>
 
             {/* Highlights Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  className="p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber/20 mb-4">
-                    <item.icon size={24} className="text-amber" />
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-amber/20 mb-3">
+                    <item.icon size={22} className="text-amber" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <h3 className="text-base font-semibold text-white mb-1.5">{item.title}</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -80,16 +80,16 @@ const CSTSection = () => {
               href="https://lumen.com/cst-treinamento"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cta px-10 py-5 text-lg inline-flex group"
+              className="btn-cta px-8 py-4 text-base inline-flex group"
             >
-              Ver Detalhes do Treinamento e Inscrições
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+              Conhecer Treinamento e Inscrições
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
 
         {/* Bottom fade transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent" />
       </div>
     </section>
   );

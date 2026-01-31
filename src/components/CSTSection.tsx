@@ -1,112 +1,95 @@
-import { ArrowRight, Award, Calendar, Globe, Monitor, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, FlaskConical, Target, Heart } from "lucide-react";
+import neuralVideo from "@/assets/neural-background.mp4";
 
 const CSTSection = () => {
-  const differentials = [
-    { icon: Monitor, text: "100% Ao Vivo e Online" },
-    { icon: Award, text: "Certificado de Formação" },
-    { icon: CheckCircle, text: "Resultados Comprovados" },
-  ];
-
-  const upcomingDates = [
-    { date: "28 Fev", year: "2026", status: "Últimas vagas" },
-    { date: "21 Mar", year: "2026", status: "Inscrições abertas" },
-    { date: "25 Abr", year: "2026", status: "Inscrições abertas" },
-    { date: "23 Mai", year: "2026", status: "Em breve" },
+  const highlights = [
+    {
+      icon: FlaskConical,
+      title: "Ciência",
+      description: "Protocolo baseado em evidências científicas e validado pela PUC-Rio.",
+    },
+    {
+      icon: Target,
+      title: "Prática",
+      description: "14 sessões temáticas focadas em estimular memória, linguagem e orientação.",
+    },
+    {
+      icon: Heart,
+      title: "Impacto",
+      description: "Tratamento centrado na pessoa com benefícios comprovados para pacientes e famílias.",
+    },
   ];
 
   return (
-    <section id="cst" className="section-padding bg-secondary/30">
-      <div className="container-narrow mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block text-sm font-medium text-amber-dark uppercase tracking-wider mb-4">
-            Capacitação Profissional
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Treinamento CST: O primeiro tratamento não medicamentoso para demência{" "}
-            <span className="gradient-text-amber">validado no Brasil</span>
-          </h2>
-        </div>
+    <section id="cst" className="relative overflow-hidden">
+      {/* Video Background with Overlay */}
+      <div className="relative min-h-[500px] md:min-h-[600px] flex items-center">
+        {/* Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={neuralVideo} type="video/mp4" />
+        </video>
 
-        {/* Main CST Card */}
-        <div className="card-cst p-8 md:p-12 max-w-4xl mx-auto">
-          {/* Badges */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {differentials.map((diff) => (
-              <div
-                key={diff.text}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-amber/10 rounded-full border border-amber/20"
-              >
-                <diff.icon size={18} className="text-amber-dark" />
-                <span className="text-sm font-medium text-foreground">{diff.text}</span>
-              </div>
-            ))}
-          </div>
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-science/90 via-science/85 to-science/95" />
 
-          {/* Description */}
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Seja capacitado por pesquisadores da PUC-Rio no método presente em{" "}
-            <strong className="text-foreground">39 países</strong>. Treinamento exclusivo para{" "}
-            <strong className="text-foreground">estudantes e profissionais da saúde</strong> que desejam
-            aplicar intervenções baseadas em evidências.
-          </p>
+        {/* Content */}
+        <div className="relative z-10 container-narrow mx-auto px-6 py-16 md:py-20">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Badge */}
+            <span className="inline-block text-sm font-medium text-amber uppercase tracking-wider mb-6">
+              Capacitação Profissional
+            </span>
 
-          {/* International validation badge */}
-          <div className="flex items-center gap-3 p-4 bg-science/5 rounded-xl border border-science/10 mb-10">
-            <Globe size={24} className="text-science flex-shrink-0" />
-            <p className="text-sm text-foreground">
-              <strong>Validação Internacional:</strong> A CST está presente em quase 40 países,
-              garantindo segurança e eficácia comprovada para o profissional de saúde.
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white text-balance leading-tight">
+              Domine o Treinamento{" "}
+              <span className="text-amber">CST</span>
+            </h2>
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-white/85 mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
+              Seja capacitado no primeiro tratamento não medicamentoso para demência{" "}
+              <strong className="text-white">validado no Brasil</strong> e presente em{" "}
+              <strong className="text-amber">39 países</strong>.
             </p>
-          </div>
 
-          {/* Schedule Grid */}
-          <div className="mb-10">
-            <div className="flex items-center gap-2 mb-5">
-              <Calendar size={20} className="text-amber" />
-              <h3 className="text-lg font-semibold">Próximas Turmas 2026</h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {upcomingDates.map((schedule, index) => (
+            {/* Highlights Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {highlights.map((item) => (
                 <div
-                  key={schedule.date}
-                  className={`p-4 rounded-xl border text-center transition-all hover:scale-105 ${
-                    index === 0
-                      ? "bg-amber/10 border-amber/30"
-                      : "bg-background border-border hover:border-amber/20"
-                  }`}
+                  key={item.title}
+                  className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  <p className="text-2xl font-bold text-foreground">{schedule.date}</p>
-                  <p className="text-sm text-muted-foreground mb-2">{schedule.year}</p>
-                  <span
-                    className={`text-xs font-medium px-2 py-1 rounded-full ${
-                      index === 0
-                        ? "bg-amber/20 text-amber-dark"
-                        : "bg-secondary text-muted-foreground"
-                    }`}
-                  >
-                    {schedule.status}
-                  </span>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber/20 mb-4">
+                    <item.icon size={24} className="text-amber" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* CTA */}
-          <div className="text-center">
+            {/* CTA Button */}
             <a
-              href="#inscricao"
-              className="btn-cta px-10 py-5 text-lg inline-flex"
+              href="https://lumen.com/cst-treinamento"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta px-10 py-5 text-lg inline-flex group"
             >
-              Quero me inscrever agora
-              <ArrowRight size={20} />
+              Ver Detalhes do Treinamento e Inscrições
+              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
             </a>
-            <p className="text-sm text-muted-foreground mt-4">
-              <Users size={14} className="inline mr-1" />
-              Turmas limitadas a 30 participantes
-            </p>
           </div>
         </div>
+
+        {/* Bottom fade transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
     </section>
   );

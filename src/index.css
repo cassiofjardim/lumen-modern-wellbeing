@@ -2,95 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Lumen - Acolhimento Moderno Design System */
+    --background: 40 20% 98%; /* Off-white #F9F9F9 */
+    --foreground: 220 25% 15%; /* Deep slate for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep Blue for scientific authority */
+    --primary: 220 55% 22%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm gray for subtle backgrounds */
+    --secondary: 40 15% 94%;
+    --secondary-foreground: 220 25% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Soft gray tones */
+    --muted: 40 10% 92%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Warm Amber for CTAs and highlights */
+    --accent: 40 90% 50%;
+    --accent-foreground: 220 25% 12%;
+
+    /* Amber variations */
+    --amber: 40 90% 50%;
+    --amber-light: 42 95% 60%;
+    --amber-dark: 38 85% 42%;
+
+    /* Scientific blue tones */
+    --science-blue: 220 55% 22%;
+    --science-blue-light: 220 45% 35%;
+
+    /* Warm neutrals */
+    --warm-gray: 40 10% 75%;
+    --warm-gray-light: 40 15% 88%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 40 90% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 15% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 15% / 0.05), 0 2px 4px -2px hsl(220 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 15% / 0.06), 0 4px 6px -4px hsl(220 25% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 25% 15% / 0.08), 0 8px 10px -6px hsl(220 25% 15% / 0.06);
+    --shadow-cst: 0 8px 30px -4px hsl(40 90% 50% / 0.15), 0 4px 12px -2px hsl(220 25% 15% / 0.05);
+
+    /* Sidebar - not used but keeping for compatibility */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 220 25% 10%;
+    --foreground: 40 20% 95%;
+    --card: 220 25% 12%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 40 90% 55%;
+    --primary-foreground: 220 25% 10%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 220 20% 20%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 40 90% 55%;
+    --accent-foreground: 220 25% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 40 90% 55%;
   }
 }
 
@@ -100,6 +101,124 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-16 md:px-8 md:py-24 lg:px-12 lg:py-32;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-amber {
+    background: linear-gradient(135deg, hsl(var(--amber)) 0%, hsl(var(--amber-light)) 100%);
+  }
+
+  .gradient-text-amber {
+    background: linear-gradient(135deg, hsl(var(--amber-dark)) 0%, hsl(var(--amber)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-highlight {
+    @apply bg-card rounded-2xl border border-border/50;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-cst {
+    @apply bg-card rounded-3xl;
+    border: 1px solid hsl(var(--amber) / 0.2);
+    box-shadow: var(--shadow-cst);
+  }
+
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--amber)) 0%, hsl(var(--amber-light)) 100%);
+    color: hsl(var(--science-blue));
+    box-shadow: 0 4px 14px -2px hsl(var(--amber) / 0.4);
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px -2px hsl(var(--amber) / 0.5);
+  }
+
+  .btn-secondary-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 border-2;
+    border-color: hsl(var(--science-blue));
+    color: hsl(var(--science-blue));
+    background: transparent;
+  }
+
+  .btn-secondary-outline:hover {
+    background: hsl(var(--science-blue));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .icon-badge {
+    @apply inline-flex items-center justify-center rounded-xl;
+    background: hsl(var(--amber) / 0.1);
+    color: hsl(var(--amber-dark));
+  }
+
+  .institution-logo {
+    @apply grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }

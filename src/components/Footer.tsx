@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img src={lumenLogo} alt="Lumen" className="w-10 h-10 object-contain" />
-              <span className="text-xl font-semibold">Lumen</span>
+              <span className="text-xl font-semibold text-primary-foreground">Lumen</span>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Ciência e tecnologia transformando a saúde mental no Brasil desde 2010.
@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Links Rápidos</h4>
+            <h4 className="font-semibold mb-4 text-primary-foreground">Links Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contato</h4>
+            <h4 className="font-semibold mb-4 text-primary-foreground">Contato</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-amber mt-0.5 flex-shrink-0" />
@@ -94,7 +94,7 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-semibold mb-4">Newsletter</h4>
+            <h4 className="font-semibold mb-4 text-primary-foreground">Newsletter</h4>
             <p className="text-primary-foreground/70 text-sm mb-4">
               Receba novidades sobre saúde mental e ciência.
             </p>
